@@ -26,7 +26,6 @@ int hello(void *ctx) {
    return 0;
 }
 """
-
 b = BPF(text=program) 
 syscall = b.get_syscall_fnname("execve")
 b.attach_kprobe(event=syscall, fn_name="hello")
