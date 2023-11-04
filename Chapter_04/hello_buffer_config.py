@@ -46,3 +46,11 @@ def print_event(cpu, data, size):
 b["output"].open_perf_buffer(print_event) 
 while True:   
    b.perf_buffer_poll()
+
+
+
+
+
+
+
+
