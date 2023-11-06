@@ -12,7 +12,7 @@ int uid;
 char command[16];
 char message[12];
 };
-int hello(void *ctx){
+int hello_my_world(void *ctx){
 struct data_t data={};
 struct data_msg_t *p;
 char message[12]="hello world";
@@ -32,7 +32,7 @@ return 0;
 """
 b=BPF(text=program)
 syscall=b.get_syscall_fnname("execve")
-b.attach_kprobe(event=syscall,fn_name='hello')
+b.attach_kprobe(event=syscall,fn_name='hello_my_world')
 
 
 
