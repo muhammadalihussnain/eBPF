@@ -37,7 +37,10 @@ typedef __s64 s64;
 
 typedef __u64 u64;
 
-enum {false = 0,true = 1,};
+enum {
+	false = 0,
+	true = 1,
+};
 
 typedef long int __kernel_long_t;
 
@@ -20488,7 +20491,7 @@ enum {
 	WORK_BUSY_PENDING = 1,
 	WORK_BUSY_RUNNING = 2,
 	WORKER_DESC_LEN = 24,
-};
+} __attribute__((mode(word)));
 
 enum {
 	MEMREMAP_WB = 1,
@@ -33041,7 +33044,7 @@ enum netdev_priv_flags {
 	IFF_NO_ADDRCONF = 1073741824,
 	IFF_TX_SKB_NO_LINEAR = 2147483648,
 	IFF_CHANGE_PROTO_DOWN = 0,
-};
+} __attribute__((mode(word)));
 
 struct bpf_nh_params {
 	u32 nh_family;
@@ -33355,7 +33358,7 @@ enum perf_callchain_context {
 	PERF_CONTEXT_GUEST_KERNEL = 4294965120,
 	PERF_CONTEXT_GUEST_USER = 4294964736,
 	PERF_CONTEXT_MAX = 4294963201,
-};
+} __attribute__((mode(word)));
 
 struct perf_buffer {
 	refcount_t refcount;
@@ -42734,7 +42737,7 @@ enum ib_uverbs_device_cap_flags {
 	IB_UVERBS_DEVICE_FLUSH_GLOBAL = 0,
 	IB_UVERBS_DEVICE_FLUSH_PERSISTENT = 0,
 	IB_UVERBS_DEVICE_ATOMIC_WRITE = 0,
-};
+} __attribute__((mode(word)));
 
 enum ib_uverbs_raw_packet_caps {
 	IB_UVERBS_RAW_PACKET_CAP_CVLAN_STRIPPING = 1,
@@ -63644,7 +63647,7 @@ enum scsi_cmnd_submitter {
 	SUBMITTED_BY_BLOCK_LAYER = 0,
 	SUBMITTED_BY_SCSI_ERROR_HANDLER = 1,
 	SUBMITTED_BY_SCSI_RESET_IOCTL = 2,
-};
+} __attribute__((mode(byte)));
 
 struct scsi_cmnd {
 	struct scsi_device *device;
@@ -91462,7 +91465,7 @@ enum hmm_pfn_flags {
 	HMM_PFN_REQ_FAULT = 0,
 	HMM_PFN_REQ_WRITE = 0,
 	HMM_PFN_FLAGS = 0,
-};
+} __attribute__((mode(word)));
 
 struct hmm_range {
 	struct mmu_interval_notifier *notifier;
@@ -105831,7 +105834,7 @@ enum {
 	BPF_F_INDEX_MASK = 4294967295,
 	BPF_F_CURRENT_CPU = 4294967295,
 	BPF_F_CTXLEN_MASK = 0,
-};
+} __attribute__((mode(word)));
 
 enum {
 	BPF_CSUM_LEVEL_QUERY = 0,
@@ -109977,7 +109980,7 @@ enum {
 	PERF_TXN_MAX = 256,
 	PERF_TXN_ABORT_MASK = 0,
 	PERF_TXN_ABORT_SHIFT = 32,
-};
+} __attribute__((mode(word)));
 
 union intel_x86_pebs_dse {
 	u64 val;
@@ -132216,7 +132219,7 @@ enum {
 	VRATE_MIN = 1374,
 	VRATE_CLAMP_ADJ_PCT = 4,
 	AUTOP_CYCLE_NSEC = 1410065408,
-};
+} __attribute__((mode(word)));
 
 enum {
 	RQ_WAIT_BUSY_PCT = 5,
@@ -136066,7 +136069,7 @@ enum hub_led_mode {
 	INDICATOR_AMBER_BLINK_OFF = 5,
 	INDICATOR_ALT_BLINK = 6,
 	INDICATOR_ALT_BLINK_OFF = 7,
-};
+} __attribute__((mode(byte)));
 
 struct usb_tt_clear {
 	struct list_head clear_list;
