@@ -18,7 +18,7 @@ BPFTOOL=$(LINUX_KERNEL_DIR)/tools/bpf/bpftool/bpftool
 
 .PHONY: $(APP)
 $(APP): skel
-	clang exec.c -lbpf -lelf -o $(APP)
+	gcc -o exec exec.c -lbpf -Wl,-rpath=/usr/lib64/
 
 .PHONY: vmlinux
 vmlinux:

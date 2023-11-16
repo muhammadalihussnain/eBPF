@@ -4,7 +4,7 @@
 SEC("tp/syscalls/sys_enter_execve")
 int handle_execve(void *ctx)
 {
-    bpf_printk("Exec Called\n");
+    bpf_printk("execution of system call \n");
     return 0;
 }
 
